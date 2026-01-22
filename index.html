@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steve Sanogo - Portfolio</title>
+
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Justifier le texte des timelines */
+    .timeline-text, .service-item-text, .about-text p {
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* Animation du Slider Infini */
+    .slider-container {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .slider-track {
+      display: flex;
+      width: calc(150px * 12); /* Ajusté pour 12 logos (6 originaux + 6 copies) */
+      animation: scroll 20s linear infinite;
+    }
+
+    .slide {
+      width: 150px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      filter: grayscale(1);
+      transition: filter 0.3s;
+    }
+
+    .slide img:hover {
+      filter: grayscale(0);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-150px * 6)); } /* Déplace de la moitié */
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <main>
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Steve Sanogo" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Steve Sanogo">Steve Sanogo</h1>
+          <p class="title">AI Engineer | Data-Driven Problem Solver</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:sanogosteve@gmail.com" class="contact-link">sanogosteve@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+33759190078" class="contact-link">+33 7 59 19 00 78</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Avignon, France</address>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/steve-sanogo-8366061a2/" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://discord.com/users/:stevesanogo" class="social-link" target="_blank">
+              <ion-icon name="logo-discord"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/steve-sanogo" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+    <div class="main-content">
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Certifications</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+        </ul>
+      </nav>
+
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+            <p>
+              I am a <strong>Telecommunications Engineer and Data & AI specialist</strong> with a strong academic background and hands-on experience at the intersection of <strong>data engineering, artificial intelligence, and public-impact projects</strong>.
+            </p>
+            <p>
+              Trained at <strong>ESMT Dakar, an ITU Center of Excellence</strong>, and currently pursuing a <strong>Master’s degree in Artificial Intelligence at the University of Avignon (CERI)</strong>, I combine solid engineering foundations with advanced AI methodologies to design <strong>data-driven solutions for complex, real-world challenges</strong>.
+            </p>
+            <p>
+              My professional exposure includes contributing to <strong>large-scale development initiatives</strong>, notably within the <strong>World Bank’s Central and West Africa Transport team</strong>, where I developed a deep understanding of how <strong>technology, public policy, and implementation constraints</strong> intersect in multicultural and high-stakes environments.
+            </p>
+            <p>
+              Driven by a strong commitment to <strong>bridging the digital divide</strong>, I am particularly motivated by projects that leverage <strong>data and artificial intelligence</strong> to support <strong>evidence-based decision-making, inclusive digital policies, and sustainable socio-economic development</strong>.
+            </p>
+        </section>
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/data-analysis.svg" alt="design icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Science & Analytics</h4>
+                <p class="service-item-text">
+                  I analyze complex datasets to extract actionable insights through statistical analysis, feature engineering, and data visualization. My work focuses on supporting evidence-based decision-making by transforming raw data into clear, reliable, and meaningful information.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/ai.svg" alt="Web development icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Artificial Intelligence & Machine Learning</h4>
+                <p class="service-item-text">
+                  I design and apply machine learning and deep learning models to solve real-world problems, with a strong focus on model evaluation, optimization, and robustness. My interests include applied AI, natural language processing, and intelligent decision-support systems.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/data-eng.svg" alt="mobile app icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Engineering & Scalable Systems</h4>
+                <p class="service-item-text">
+                  I build and maintain reliable data pipelines and scalable data architectures that enable efficient data processing and model deployment. I focus on bridging the gap between data collection, analytics, and production-ready AI systems.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/tech4Public.svg" alt="camera icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Tech for Public Impact & Digital Policy</h4>
+                <p class="service-item-text">
+                  I leverage data and artificial intelligence to support public-impact projects, particularly in infrastructure, development, and digital governance contexts. My work emphasizes inclusive, ethical, and sustainable use of technology in large-scale, multicultural environments.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <div class="modal-container" data-modal-container>
+            <div class="overlay" data-overlay></div>
+            <section class="testimonials-modal">
+              <button class="modal-close-btn" data-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+              <div class="modal-img-wrapper">
+                <figure class="modal-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Avatar" width="80" data-modal-img>
+                </figure>
+                <img src="./assets/images/icon-quote.svg" alt="quote icon">
+              </div>
+              <div class="modal-content">
+                <h4 class="h3 modal-title" data-modal-title>Title</h4>
+                <time datetime="2021-06-14">14 June, 2021</time>
+                <div data-modal-text>
+                  <p>Text</p>
+                </div>
+              </div>
+            </section>
+        </div>
+
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Companies</h3>
+
+          <div class="slider-container">
+            <div class="slider-track">
+
+              <div class="slide"><img src="./assets/images/wb.png" alt="World Bank"></div>
+              <div class="slide"><img src="./assets/images/obf.png" alt="Orange"></div>
+              <div class="slide"><img src="./assets/images/synapse.png" alt="Synapse"></div>
+              <div class="slide"><img src="./assets/images/emc2.jpg" alt="Emc2"></div>
+              <div class="slide"><img src="./assets/images/rtb.jpg" alt="RTB"></div>
+              <div class="slide"><img src="./assets/images/moov.png" alt="Moov"></div>
+
+              <div class="slide"><img src="./assets/images/wb.png" alt="World Bank"></div>
+              <div class="slide"><img src="./assets/images/obf.png" alt="Orange"></div>
+              <div class="slide"><img src="./assets/images/synapse.png" alt="Synapse"></div>
+              <div class="slide"><img src="./assets/images/emc2.jpg" alt="Emc2"></div>
+              <div class="slide"><img src="./assets/images/rtb.jpg" alt="RTB"></div>
+              <div class="slide"><img src="./assets/images/moov.png" alt="Moov"></div>
+
+            </div>
+          </div>
+
+        </section>
+
+      </article>
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Centre for Education and Research in Computer Science (CERI)</h4>
+              <span>9/2025 — Present</span>
+              <p class="timeline-text">
+                <strong>Master's degree, CS with specialization in AI</strong><br>
+                Concentration: Advanced Artificial Intelligence, Intelligent Systems, Data Science, Optimization & Decision Support, Ethics and Societal Impacts of AI | Avignon University Mistral Scholar
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Multinational Higher School of Telecommunications (ESMT)</h4>
+              <span>10/2021 — 10/2024</span>
+              <p class="timeline-text">
+                <strong>MSc. in Telecommunication Engineering, Specialized in Data Engineering and AI</strong><br>
+                Concentration: Machine & Deep Learning, Big Data, Telecom infrastructures, Data Analytics | GPA: 3.9 / 4.0
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Multinational Higher School of Telecommunications (ESMT)</h4>
+              <span>10/2018 — 08/2021</span>
+              <p class="timeline-text">
+                <strong>B.Eng.Sc.</strong><br>
+                Concentration: Applied Mathematics, Statistics, Computer Science (Algorithms, Data Structures) | Burkina Faso Gov. Scholarship scholar | GPA: 3.7 / 4.0
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Digital & Roaming Assistant</h4>
+              <span>12/2024 — Present</span>
+              <p class="timeline-text">
+                <strong>Orange Burkina Faso | Ouagadougou</strong><br>
+                • Managed and optimized the “Max it” application, enhancing user engagement and app performance.<br>
+                • Monitored and analyzed content service revenues, identifying trends and opportunities to increase profitability.<br>
+                • Coordinated with internal stakeholders to ensure compliance and strategic alignment.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Transport Consultant (STT)</h4>
+              <span>09/2023 — 08/2024</span>
+              <p class="timeline-text">
+                <strong>The World Bank | Abidjan, Cote D’Ivoire</strong><br>
+                • Coordinated transport infrastructure projects by collaborating with stakeholders and monitoring project indicators (Rural Access Index, Road Safety Index), leading to improved execution.<br>
+                • Developed applications (Work Statement Management Tool, ESMP Performance Monitoring Tool), automating data tracking and reducing processing time by 90%.<br>
+                • Drafted project documents (PAD, Aide-Memoire, Theory of Change) and prepared detailed reports for senior management.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Data Analyst</h4>
+              <span>03/2023 — 08/2023</span>
+              <p class="timeline-text">
+                <strong>Synapse Center | Dakar, Senegal</strong><br>
+                • Collected, cleaned, and organized large datasets on learner attendance using automated scripts (Excel, Python), improving data accuracy.<br>
+                • Applied descriptive and statistical analysis techniques to evaluate learner attendance trends.<br>
+                • Created customized reports/dashboards contributing to a 25% increase in learner attendance through targeted interventions.<br>
+                • Co-led 5 Microsoft and IOE digital training sessions (Tech@Work, Digital Ambassadors).
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">My skills</h3>
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Web design</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Graphic design</h5>
+                <data value="70">70%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Branding</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">WordPress</h5>
+                <data value="50">50%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 50%;"></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </article>
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Professional</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Academic</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Personal Projects</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+            <ul class="select-list">
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Professional</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Academic</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Personal Projects</button>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+                <h3 class="project-title">Finance</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
+                <h3 class="project-title">Orizon</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web design">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+                <h3 class="project-title">Fundo</h3>
+                <p class="project-category">Web design</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+                <h3 class="project-title">Brawlhalla</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web design">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+                <h3 class="project-title">DSM.</h3>
+                <p class="project-category">Web design</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web design">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
+                <h3 class="project-title">MetaSpark</h3>
+                <p class="project-category">Web design</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                </figure>
+                <h3 class="project-title">Summary</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="applications">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+                <h3 class="project-title">Task Manager</h3>
+                <p class="project-category">Applications</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+                <h3 class="project-title">Arrival</h3>
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+      <article class="blog" data-page="certifications">
+
+        <header>
+          <h2 class="h2 article-title">Certifications</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/cert-1.png" alt="Excel Certification" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Alison</p>
+                    <span class="dot"></span>
+                    <time datetime="2025-10">Issued: Oct 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Microsoft Excel for Beginners and Experts</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/cert-2.png" alt="Data Analytics Essentials" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Cisco Networking Academy</p>
+                    <span class="dot"></span>
+                    <time datetime="2023-04">Issued: Apr 2023</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Data Analytics Essentials</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/cert-3.png" alt="AWS Data Analytics" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Amazon Web Services (AWS)</p>
+                    <span class="dot"></span>
+                    <time datetime="2023-03">Issued: Mar 2023</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">AWS Academy Data Analytics</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/cert-4.png" alt="Agile Project Management" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Project Management Institute</p>
+                    <span class="dot"></span>
+                    <time datetime="2023-03">Issued: Mar 2023</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Fundamentals of Agile Project Management</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/cert-5.png" alt="Python Essentials" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">OpenEDG</p>
+                    <span class="dot"></span>
+                    <time datetime="2023-02">Issued: Feb 2023</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">PCAP : Programming Essentials in Python</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/cert-6.png" alt="HCIA Datacom" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Huawei</p>
+                    <span class="dot"></span>
+                    <time datetime="2022-05">Issued: May 2022</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">HCIA-Datacom Course</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/cert-7.png" alt="Networking Essentials" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Cisco Networking Academy</p>
+                    <span class="dot"></span>
+                    <time datetime="2021-10">Issued: Oct 2021</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Networking Essentials</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/cert-8.png" alt="Linux Essentials" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Cisco Networking Academy</p>
+                    <span class="dot"></span>
+                    <time datetime="2021-09">Issued: Sep 2021</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">NDG Linux Essentials</h3>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+
+          <div style="margin-top: 40px; display: flex; justify-content: center;">
+            <a href="https://drive.google.com/drive/folders/1TXi3dfrH08c0Pz3Aw4_Ea6N2lmqJp0k1" target="_blank" class="form-btn" style="width: auto; padding: 16px 30px; text-decoration: none;">
+              <ion-icon name="logo-google"></ion-icon>
+              <span>Voir toutes les certifications</span>
+            </a>
+          </div>
+
+        </section>
+
+      </article>
+
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="contact-form">
+          <h3 class="h3 form-title">Contact Form</h3>
+          <form action="#" class="form" data-form>
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <script src="./assets/js/script.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
