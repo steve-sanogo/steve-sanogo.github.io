@@ -157,3 +157,53 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+// ------------------------------------------------
+// PORTFOLIO MODAL FUNCTIONALITY
+// ------------------------------------------------
+
+// Variables
+const portfolioModalContainer = document.querySelector("[data-portfolio-modal-container]");
+const portfolioOverlay = document.querySelector("[data-portfolio-overlay]");
+const portfolioModalCloseBtn = document.querySelector("[data-portfolio-modal-close-btn]");
+const portfolioModalTitle = document.querySelector("[data-portfolio-modal-title]");
+const portfolioModalCategory = document.querySelector("[data-portfolio-modal-category]");
+const portfolioModalText = document.querySelector("[data-portfolio-modal-text]");
+
+// Select all triggers (links with class 'portfolio-modal-trigger')
+const portfolioTriggers = document.querySelectorAll(".portfolio-modal-trigger");
+
+// Function to toggle modal
+const portfolioModalFunc = function () {
+  portfolioModalContainer.classList.toggle("active");
+  portfolioOverlay.classList.toggle("active");
+}
+
+// Add click event to all professional project items
+portfolioTriggers.forEach(trigger => {
+  trigger.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent default link behavior
+
+    // Get data from attributes
+    const title = this.getAttribute("data-title");
+    const category = this.getAttribute("data-category");
+    const desc = this.getAttribute("data-desc");
+
+    // Populate modal
+    portfolioModalTitle.innerHTML = title;
+    portfolioModalCategory.innerHTML = category;
+    portfolioModalText.innerHTML = `<p>${desc}</p>`; // Wrap in paragraph
+
+    // Open modal
+    portfolioModalFunc();
+  });
+});
+
+// Close modal events
+if (portfolioModalCloseBtn) {
+  portfolioModalCloseBtn.addEventListener("click", portfolioModalFunc);
+}
+if (portfolioOverlay) {
+  portfolioOverlay.addEventListener("click", portfolioModalFunc);
+}
