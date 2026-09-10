@@ -1,8 +1,6 @@
 'use strict';
 
 (() => {
-  document.documentElement.classList.add('js');
-
   const sidebar = document.querySelector('[data-sidebar]');
   const sidebarButton = document.querySelector('[data-sidebar-btn]');
   sidebarButton?.addEventListener('click', () => {
@@ -35,65 +33,6 @@
   }));
   window.addEventListener('hashchange', () => showPage(location.hash.slice(1) || 'about', true));
   showPage(location.hash.slice(1) || 'about');
-
-
-  // Resume tabs: accessible local navigation with a no-JS fallback.
-  const resumeTabs = [...document.querySelectorAll('[data-resume-tab]')];
-  const resumePanels = [...document.querySelectorAll('[data-resume-panel]')];
-
-  const activateResumeTab = (targetName, { focusTab = false, focusPanel = false } = {}) => {
-    const targetTab = resumeTabs.find(tab => tab.dataset.resumeTab === targetName);
-    const targetPanel = resumePanels.find(panel => panel.dataset.resumePanel === targetName);
-    if (!targetTab || !targetPanel) return;
-
-    resumeTabs.forEach(tab => {
-      const active = tab === targetTab;
-      tab.classList.toggle('active', active);
-      tab.setAttribute('aria-selected', String(active));
-      tab.tabIndex = active ? 0 : -1;
-    });
-
-    resumePanels.forEach(panel => {
-      panel.hidden = panel !== targetPanel;
-    });
-
-    if (focusTab) targetTab.focus({ preventScroll: true });
-    if (focusPanel) targetPanel.focus({ preventScroll: true });
-  };
-
-  if (resumeTabs.length && resumePanels.length) {
-    // Progressive enhancement: HTML contains every section, JS collapses it into tabs.
-    activateResumeTab(
-      resumeTabs.find(tab => tab.getAttribute('aria-selected') === 'true')?.dataset.resumeTab
-        || resumeTabs[0].dataset.resumeTab
-    );
-
-    resumeTabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => {
-        activateResumeTab(tab.dataset.resumeTab);
-      });
-
-      tab.addEventListener('keydown', event => {
-        let nextIndex = null;
-
-        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-          nextIndex = (index + 1) % resumeTabs.length;
-        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-          nextIndex = (index - 1 + resumeTabs.length) % resumeTabs.length;
-        } else if (event.key === 'Home') {
-          nextIndex = 0;
-        } else if (event.key === 'End') {
-          nextIndex = resumeTabs.length - 1;
-        }
-
-        if (nextIndex === null) return;
-
-        event.preventDefault();
-        const nextTab = resumeTabs[nextIndex];
-        activateResumeTab(nextTab.dataset.resumeTab, { focusTab: true });
-      });
-    });
-  }
 
   const select = document.querySelector('[data-select]');
   const selectValue = document.querySelector('[data-select-value]');
