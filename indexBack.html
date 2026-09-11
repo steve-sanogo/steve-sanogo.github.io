@@ -23,7 +23,7 @@
 
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="./assets/css/style.css?v=20260910-skills">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20260910-resume-tabs">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -267,7 +267,43 @@
           <h2 class="h2 article-title" id="resume-title" tabindex="-1">Resume</h2>
         </header>
 
-        <section class="timeline">
+        <div class="resume-tabs" role="tablist" aria-label="Resume sections" data-resume-tabs>
+          <button
+            class="resume-tab active"
+            type="button"
+            role="tab"
+            id="resume-tab-education"
+            aria-controls="resume-education"
+            aria-selected="true"
+            tabindex="0"
+            data-resume-tab="education">
+            Education
+          </button>
+          <button
+            class="resume-tab"
+            type="button"
+            role="tab"
+            id="resume-tab-experience"
+            aria-controls="resume-experience"
+            aria-selected="false"
+            tabindex="-1"
+            data-resume-tab="experience">
+            Experience
+          </button>
+          <button
+            class="resume-tab"
+            type="button"
+            role="tab"
+            id="resume-tab-skills"
+            aria-controls="resume-skills"
+            aria-selected="false"
+            tabindex="-1"
+            data-resume-tab="skills">
+            Technical Skills
+          </button>
+        </div>
+
+        <section class="timeline resume-panel" id="resume-education" role="tabpanel" aria-labelledby="resume-tab-education" tabindex="0" data-resume-panel="education">
 
           <div class="title-wrapper">
             <div class="icon-box">
@@ -336,7 +372,7 @@
 
         </section>
 
-        <section class="timeline">
+        <section class="timeline resume-panel" id="resume-experience" role="tabpanel" aria-labelledby="resume-tab-experience" tabindex="0" data-resume-panel="experience">
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon aria-hidden="true" name="briefcase-outline"></ion-icon>
@@ -384,7 +420,7 @@
 
         </section>
 
-        <section class="skill" aria-labelledby="skills-title">
+        <section class="skill resume-panel" id="resume-skills" role="tabpanel" aria-labelledby="resume-tab-skills" tabindex="0" data-resume-panel="skills">
           <h3 class="h3 skills-title" id="skills-title">Technical Skills</h3>
           <ul class="skills-grid">
             <li class="skill-card content-card">
@@ -1060,7 +1096,7 @@
     </div>
   </dialog>
 
-  <script defer src="./assets/js/script.js?v=20260910-2"></script>
+  <script defer src="./assets/js/script.js?v=20260910-resume-tabs"></script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script defer nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -441,6 +441,8 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
+  text-align: left;
+  hyphens: none;
 }
 
 .modal-close-btn {
@@ -1400,7 +1402,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 .discord-contact { cursor: help; }
 .blog-meta { flex-wrap: wrap; }
 .blog-meta .dot { flex-shrink: 0; }
-.timeline-text, .service-item-text, .about-text p { text-align: justify; hyphens: auto; }
+.timeline-text, .about-text p { text-align: justify; hyphens: auto; }
 .distinctions .timeline-item > span { font-size: var(--fs-7); margin-bottom: 7px; }
 .section-action { margin-top: 40px; display: flex; justify-content: center; }
 .section-action-link { width: auto; max-width: 100%; padding: 16px 30px; margin-left: 0; }
@@ -1438,7 +1440,7 @@ body:has(.project-dialog[open]) { overflow: hidden; }
   .navbar { padding-bottom: env(safe-area-inset-bottom); }
   .navbar-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 0 5px; }
   .navbar-link { width: 100%; text-align: center; padding: 12px 3px; min-height: 44px; }
-  .timeline-text, .service-item-text, .about-text p { text-align: left; hyphens: none; }
+  .timeline-text, .about-text p { text-align: left; hyphens: none; }
   .info-content .title { padding-inline: 8px; }
 }
 @media (min-width: 1024px) {
